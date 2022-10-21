@@ -67,20 +67,20 @@ def DividirPDF(arquivoDividir):
 
 def ComprimirPDF(arquivoComprimir):
    
-   if __name__ == "__main__":
-
-      for i in arquivoComprimir:
-         with open(i.name,"wb") as x:
-            x.write(i.getbuffer())
-
-      entrada = "teste.pdf"
-      saida = "Arquivo_Compress.pdf"
-      subprocess.Popen(["bash","./pdfsizeopt/pdfsizeopt.exe",entrada,saida])
+   st.info("Em desenvolvimento...")
    
-      #with open(saida,"rb") as arquivoFinal:
-         #st.download_button(label ="📥 Download",data = arquivoFinal,file_name=saida)
+   for i in arquivoComprimir:
+      with open(i.name,"wb") as x:
+         x.write(i.getbuffer())
 
-      #st.success('Concluído!', icon="✅")
+   entrada = "teste.pdf"
+   saida = "Arquivo_Compress.pdf"
+   subprocess.Popen(["bash","./pdfsizeopt/pdfsizeopt.exe",entrada,saida])
+   
+   #with open(saida,"rb") as arquivoFinal:
+      #st.download_button(label ="📥 Download",data = arquivoFinal,file_name=saida)
+
+   #st.success('Concluído!', icon="✅")
        
     
       
