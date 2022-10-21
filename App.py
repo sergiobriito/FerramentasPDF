@@ -72,7 +72,7 @@ def ComprimirPDF(arquivoComprimir):
             x.write(i.getbuffer())
 
       compress = "./pdfsizeopt/pdfsizeopt.exe"
-      print("ok")
+      st.write("ok")
       entrada = arquivoComprimir[0].name
       saida = "Arquivo_Compress.pdf"
       os.system("{} {} {}".format(compress,entrada,saida))
