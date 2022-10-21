@@ -76,7 +76,7 @@ def ComprimirPDF(arquivoComprimir):
    compress = "./pdfsizeopt/pdfsizeopt.exe"
    entrada = "teste.pdf"
    saida = "Arquivo_Compress.pdf"
-   os.system("bash set -m {} {} {}".format(compress,entrada,saida))
+   os.system("bash {} {} {}".format(compress,entrada,saida))
    
    #with open(saida,"rb") as arquivoFinal:
       #st.download_button(label ="📥 Download",data = arquivoFinal,file_name=saida)
