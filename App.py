@@ -74,8 +74,7 @@ def ComprimirPDF(arquivoComprimir):
 
       entrada = "teste.pdf"
       saida = "Arquivo_Compress.pdf"
-      args = "./pdfsizeopt/pdfsizeopt.exe -config " + entrada + " "+ saida 
-      subprocess.run(['chmod','u+x',"./pdfsizeopt/pdfsizeopt.exe",entrada, saida ])
+      subprocess.run(['chmod','u+x',"./pdfsizeopt/pdfsizeopt.exe",entrada ])
 
       #with open(saida,"rb") as arquivoFinal:
          #st.download_button(label ="📥 Download",data = arquivoFinal,file_name=saida)
