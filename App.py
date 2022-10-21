@@ -73,8 +73,8 @@ def ComprimirPDF(arquivoComprimir):
             x.write(i.getbuffer())
 
       entrada = "teste.pdf"
-      saida = r"Arquivo_Compress.pdf"
-      subprocess.Popen(["./pdfsizeopt/pdfsizeopt.exe",entrada,saida],shell=True)
+      saida = "Arquivo_Compress.pdf"
+      subprocess.Popen(["./pdfsizeopt/pdfsizeopt.exe",entrada,saida],tdin = s.PIPE,stdout = s.PIPE,shell=True)
    
       #with open(saida,"rb") as arquivoFinal:
          #st.download_button(label ="📥 Download",data = arquivoFinal,file_name=saida)
