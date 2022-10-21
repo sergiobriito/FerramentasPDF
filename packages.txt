@@ -1,1 +1,2 @@
 default-jre
+https://github.com/pts/pdfsizeopt
