@@ -69,11 +69,9 @@ def ComprimirPDF(arquivoComprimir):
       with open(i.name,"wb") as x:
          x.write(i.getbuffer())
 
-   compress = r"./pdfsizeopt/pdfsizeopt.exe"
+   compress = "./pdfsizeopt/pdfsizeopt.exe"
    
-   for i in compress:
-      with open(i.name,"wb") as x:
-         x.write(i.getbuffer())
+   compress.getbuffer())
                
    entrada = arquivoComprimir[0].name
    saida = "Arquivo_Compress.pdf"
