@@ -74,7 +74,7 @@ def ComprimirPDF(arquivoComprimir):
 
       entrada = "teste.pdf"
       saida = "Arquivo_Compress.pdf"
-      args = "./pdfsizeopt/pdfsizeopt.exe -config " + entrada + saida 
+      args = "./pdfsizeopt/pdfsizeopt.exe -config " + entrada + " "+ saida 
       subprocess.call(args,stdin=None, stdout=None, stderr=None, shell=False)
 
       #with open(saida,"rb") as arquivoFinal:
