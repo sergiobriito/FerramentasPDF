@@ -74,7 +74,8 @@ def ComprimirPDF(arquivoComprimir):
       compress = "./pdfsizeopt/pdfsizeopt.exe"
       entrada = arquivoComprimir[0].name
       saida = "Arquivo_Compress.pdf"
-      os.system("chmod {} {} {}".format(compress,entrada,saida))
+      os.system("chmod +x {}".format(compress))
+      os.system("{} {} {}".format(compress,entrada,saida))
 
       #with open(saida,"rb") as arquivoFinal:
          #st.download_button(label ="📥 Download",data = arquivoFinal,file_name=saida)
