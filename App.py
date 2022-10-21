@@ -74,7 +74,8 @@ def ComprimirPDF(arquivoComprimir):
    saida = "Arquivo_Compress.pdf"
    os.system("{} {} {}".format(compress,entrada,saida))
 
-   os.remove(saida)
+   with open(saida,"rb") as arquivoFinal:
+      st.download_button(label ="📥 Download",data = arquivoFinal,file_name=saida)
 
    st.success('Concluído!', icon="✅")
        
