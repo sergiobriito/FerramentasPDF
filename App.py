@@ -1,5 +1,6 @@
 import os
 import subprocess
+from subprocess import Popen, PIPE
 import zipfile
 import pikepdf
 import tabula
@@ -74,7 +75,7 @@ def ComprimirPDF(arquivoComprimir):
 
       entrada = "teste.pdf"
       saida = "Arquivo_Compress.pdf"
-      subprocess.run(["bash","./pdfsizeopt/pdfsizeopt.exe",entrada,saida])
+      subprocess.Popen(["./pdfsizeopt/pdfsizeopt.exe",entrada,saida],stdin=PIPE, stdout=PIPE, stderr=PIPE)
    
       #with open(saida,"rb") as arquivoFinal:
          #st.download_button(label ="📥 Download",data = arquivoFinal,file_name=saida)
