@@ -1,0 +1,7 @@
+PyPDF2
+pikepdf
+tabula
+tabula-py
+xlsxwriter
+pylovepdf
+pdf2docx
