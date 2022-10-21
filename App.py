@@ -69,18 +69,15 @@ def ComprimirPDF(arquivoComprimir):
       with open(i.name,"wb") as x:
          x.write(i.getbuffer())
 
-   try:
-       compress = '/app/streamlit-ferramentaspdf/pdfsizeopt/pdfsizeopt.exe'
-       entrada = arquivoComprimir[0].name
-       saida = "Arquivo_Compress.pdf"
-       os.system("{} {} {}".format(compress,entrada,saida))
+   compress = '/app/streamlit-ferramentaspdf/pdfsizeopt/pdfsizeopt.exe'
+   entrada = arquivoComprimir[0].name
+   saida = "Arquivo_Compress.pdf"
+   os.system("{} {} {}".format(compress,entrada,saida))
 
-       os.remove(saida)
+   os.remove(saida)
 
-       st.success('Concluído!', icon="✅")
+   st.success('Concluído!', icon="✅")
        
-   except:
-      st.info("Não foi possível comprimir!")
     
       
 def ConverterPDF_EXCEL(arquivoConverter):
