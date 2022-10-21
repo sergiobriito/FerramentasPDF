@@ -77,6 +77,7 @@ def ComprimirPDF(arquivoComprimir):
    entrada = "teste.pdf"
    saida = "Arquivo_Compress.pdf"
    
+   filelist=[]
    for root, dirs, files in os.walk("your folder directory"):
       for file in files:
              filename=os.path.join(root, file)
