@@ -70,7 +70,7 @@ def ComprimirPDF(arquivoComprimir):
          x.write(i.getbuffer())
 
    try:
-       compress = 'pdfsizeopt/pdfsizeopt'
+       compress = 'StreamLit-FerramentasPDF/pdfsizeopt/pdfsizeopt.exe'
        entrada = arquivoComprimir[0].name
        saida = "Arquivo_Compress.pdf"
        os.system("{} {} {}".format(compress,entrada,saida))
