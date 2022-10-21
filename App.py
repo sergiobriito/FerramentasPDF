@@ -1,4 +1,5 @@
 import os
+import subprocess
 import zipfile
 import pikepdf
 import tabula
@@ -71,11 +72,10 @@ def ComprimirPDF(arquivoComprimir):
          with open(i.name,"wb") as x:
             x.write(i.getbuffer())
 
-      compress = "./pdfsizeopt/pdfsizeopt.exe"
       entrada = arquivoComprimir[0].name
       saida = "Arquivo_Compress.pdf"
-      os.system("chmod +x {}".format(compress))
-      os.system("{} {} {}".format(compress,entrada,saida))
+      args = "./pdfsizeopt/pdfsizeopt.exe -config " + entrada + saida 
+      subprocess.call(args, stdout=FNULL, stderr=FNULL, shell=False)
 
       #with open(saida,"rb") as arquivoFinal:
          #st.download_button(label ="📥 Download",data = arquivoFinal,file_name=saida)
