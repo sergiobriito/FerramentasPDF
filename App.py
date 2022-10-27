@@ -198,7 +198,6 @@ if funcionalidaEscolhida == "Converter PDF para Word":
          with st.spinner('Processando...'):
             ConverterPDF_WORD(arquivo)
          
-
 style = """
 <style>
 #MainMenu {visibility: hidden;}
