@@ -67,8 +67,6 @@ def DividirPDF(arquivoDividir):
 def ComprimirPDF(arquivoComprimir):
    
    st.info("Em desenvolvimento...")
-
-   os.remove("teste.pdf")
    
    for i in arquivoComprimir:
       with open(i.name,"wb") as x:
@@ -78,13 +76,12 @@ def ComprimirPDF(arquivoComprimir):
    entrada = "/app/streamlit-ferramentaspdf/teste.pdf"
    saida = "/app/streamlit-ferramentaspdf/ArquivoCompress.pdf"
 
-
    os.system("mkdir pdfsizeopt")
    os.system("cd ./pdfsizeopt")
    os.system("tar -xzvf /app/streamlit-ferramentaspdf/pdfsizeopt_libexec_linux.tar.gz")
    os.system("chmod +x /app/streamlit-ferramentaspdf/pdfsizeopt.single")
    os.system("ln -sf /app/streamlit-ferramentaspdf/pdfsizeopt.single ./pdfsizeopt/pdfsizeopt")
-   os.system("{} {} {}".format(compress,entrada,saida))
+   os.system("{} --use-pngout=no {} {}".format(compress,entrada,saida))
    
    #with open(saida,"rb") as arquivoFinal:
    #   st.download_button(label ="📥 Download",data = arquivoFinal,file_name=saida)
