@@ -76,7 +76,7 @@ def ComprimirPDF(arquivoComprimir):
    entrada = "teste.pdf"
    saida = "Arquivo_Compress.pdf"
 
-   subprocess.run(["bash","mkdir pdfsizeopt"])
+   subprocess.run(["bash","mkdir ./pdfsizeopt"])
    subprocess.run(["bash","cd ./pdfsizeopt"])
    subprocess.run(["bash","wget -O pdfsizeopt_libexec_linux.tar.gz https://github.com/pts/pdfsizeopt/releases/download/2017-01-24/pdfsizeopt_libexec_linux-v3.tar.gz"])
    subprocess.run(["bash","tar -xvf pdfsizeopt_libexec_linux.tar-v3.gz"])
