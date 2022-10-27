@@ -72,13 +72,12 @@ def ComprimirPDF(arquivoComprimir):
       with open(i.name,"wb") as x:
          x.write(i.getbuffer())
 
-   compress = "/app/streamlit-ferramentaspdf/pdfsizeopt/pdfsizeopt"
-   entrada = "/app/streamlit-ferramentaspdf/teste.pdf"
-   saida = "ArquivoCompress.pdf"
+   compress = "./pdfsizeopt"
+   entrada = "./teste.pdf"
+   saida = "./ArquivoCompress.pdf"
 
    os.system("mkdir pdfsizeopt")
-   os.system("cd ./pdfsizeopt")
-   os.system("tar -xzvf /app/streamlit-ferramentaspdf/pdfsizeopt_libexec_linux.tar.gz")
+   os.system("tar -xzvf /app/streamlit-ferramentaspdf/pdfsizeopt_libexec_linux.tar.gz ./pdfsizeopt")
    os.system("chmod +x /app/streamlit-ferramentaspdf/pdfsizeopt.single")
    os.system("ln -sf /app/streamlit-ferramentaspdf/pdfsizeopt.single ./pdfsizeopt/pdfsizeopt")
    os.system("{} {} {}".format(compress,entrada,saida))
