@@ -78,14 +78,12 @@ def ComprimirPDF(arquivoComprimir):
    st.info("Em desenvolvimento...")
    
    for i in arquivoComprimir:
-      with open(i.name,"wb") as x:
-         x.write(i.getbuffer())
+       i.getbuffer()
 
    compress = "./pdfsizeopt.single"
    entrada = "./novo.pdf"
    saida = "./ArquivoCompress.pdf"
 
-   os.system("chmod +x ./novo.pdf")
    os.system("chmod +x ./pdfsizeopt.single")
    os.system("chmod +x ./pdfsizeopt_libexec/avian")
    os.system("chmod +x ./pdfsizeopt_libexec/gs")
