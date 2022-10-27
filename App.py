@@ -2,7 +2,6 @@ import os
 import time
 import zipfile
 import pikepdf
-import pypdftk
 import tabula
 from PyPDF2 import PdfFileReader, PdfFileMerger, PdfFileWriter
 import glob
@@ -91,9 +90,7 @@ def ComprimirPDF(arquivoComprimir):
       name = (((arquivoComprimir[0].name.replace(".pdf","") + "-Unlocked.pdf").replace(" ","-")).replace("(","-")).replace(")","-")
       pdf.save(name)
 
-      pypdftk.compress(name,name + "_new.pdf")
-
-      entrada = "./" + name + "_new.pdf"
+      entrada = "./" + name
       saida = "./Arquivo_Compress.pdf"
       compress = "./pdfsizeopt.single"
       
