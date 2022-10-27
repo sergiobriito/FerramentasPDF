@@ -76,7 +76,6 @@ def ComprimirPDF(arquivoComprimir):
    entrada = "./novo.pdf"
    saida = "./ArquivoCompress.pdf"
 
-   os.remove('novo.pdf')
 
    os.system("chmod +x ./pdfsizeopt.single")
    os.system("chmod +x ./pdfsizeopt_libexec/avian")
@@ -93,7 +92,7 @@ def ComprimirPDF(arquivoComprimir):
    #   st.download_button(label ="📥 Download",data = arquivoFinal,file_name=saida)
    #st.success('Concluído!', icon="✅")
        
-    
+   os.remove(entrada)
       
 def ConverterPDF_EXCEL(arquivoConverter):
    
