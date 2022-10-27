@@ -103,7 +103,7 @@ def ComprimirPDF(arquivoComprimir):
       os.system("chmod +x ./pdfsizeopt_libexec/python")
       os.system("chmod +x ./pdfsizeopt_libexec/sam2p")
       os.system("dir")
-      os.system("{} --use-pngout=no --do-optimize-fonts=no --do-optimize-images=yes {} {}".format(compress,entrada,saida))
+      os.system("{} --use-pngout=no --do-optimize-fonts=no --do-optimize-images=no {} {}".format(compress,entrada,saida))
       
       with open(saida,"rb") as arquivoFinal:
          st.download_button(label ="📥 Download",data = arquivoFinal,file_name=saida)
