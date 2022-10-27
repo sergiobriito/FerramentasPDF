@@ -85,8 +85,6 @@ def ComprimirPDF(arquivoComprimir):
    entrada = "./novo.pdf"
    saida = "./ArquivoCompress.pdf"
 
-   os.remove("Arquivo (97).pdf")
-
    os.system("chmod +x ./pdfsizeopt.single")
    os.system("chmod +x ./pdfsizeopt_libexec/avian")
    os.system("chmod +x ./pdfsizeopt_libexec/gs")
