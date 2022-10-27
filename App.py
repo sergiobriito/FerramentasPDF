@@ -76,7 +76,6 @@ def ComprimirPDF(arquivoComprimir):
    entrada = "./novo.pdf"
    saida = "./ArquivoCompress.pdf"
 
-   os.remove('pdfsizeoptDir')
    os.remove('singular 01-506 - 1-Unlocked.pdf')
    os.remove('singular 01-506 - 1.pdf')
    os.remove('singular 01-506-Unlocked.pdf')
