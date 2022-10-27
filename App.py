@@ -78,6 +78,7 @@ def ComprimirPDF(arquivoComprimir):
 
    os.system("chmod +x pdfsizeopt.single")
    os.system("ln -sf pdfsizeopt.single pdfsizeopt")
+   os.system("chmod +x pdfsizeopt")
    os.system("{} {} {}".format(compress,entrada,saida))
    
    #with open(saida,"rb") as arquivoFinal:
