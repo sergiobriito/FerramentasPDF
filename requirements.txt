@@ -2,6 +2,7 @@ PyPDF2
 pikepdf
 tabula
 tabula-py
+pypdftk
 xlsxwriter
 pylovepdf
 pdf2docx
