@@ -78,8 +78,8 @@ def ComprimirPDF(arquivoComprimir):
    saida = "Arquivo_Compress.pdf"
 
 
-   os.system("tar xzvf pdfsizeopt_libexec_linux.tar.gz")
-   os.system("rm -f    pdfsizeopt_libexec_linux.tar.gz")
+   os.system("tar xzvf pdfsizeopt_libexec_linux-v3.tar.gz")
+   os.system("rm -f    pdfsizeopt_libexec_linux-v3.tar.gz")
    os.system("chmod +x pdfsizeopt.single")
    os.system("ln -s pdfsizeopt.single pdfsizeopt")
    os.system("sh  {} {} {}".format(compress,entrada,saida))
