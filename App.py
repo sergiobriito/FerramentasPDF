@@ -75,10 +75,7 @@ def DividirPDF(arquivoDividir):
 
 def ComprimirPDF(arquivoComprimir):
 
-   os.remove("201 04-Unlocked.pdf")
-   os.remove("206 03-Unlocked.pdf")
-   os.remove("206 03.pdf")
-   os.remove("302 15.pdf")
+   os.remove("302 15-Unlocked.pdf")
 
    
    for i in arquivoComprimir:
