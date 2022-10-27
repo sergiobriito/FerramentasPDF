@@ -72,13 +72,13 @@ def ComprimirPDF(arquivoComprimir):
       with open(i.name,"wb") as x:
          x.write(i.getbuffer())
 
-   compress = "pdfsizeopt"
+   compress = "./pdfsizeopt"
    entrada = "teste.pdf"
    saida = "Arquivo_Compress.pdf"
 
-   subprocess.run(['bash', f"{'tar xzvf pdfsizeopt_libexec_linux.tar.gz'}"])
-   subprocess.run(['bash', f"{'rm -f    pdfsizeopt_libexec_linux.tar.gz'}"])
-   subprocess.run(['bash', f"{'chmod +x pdfsizeopt.single'}"])
+   subprocess.run(['bash', f"{'tar xzvf ./pdfsizeopt_libexec_linux.tar.gz'}"])
+   subprocess.run(['bash', f"{'rm -f    ./pdfsizeopt_libexec_linux.tar.gz'}"])
+   subprocess.run(['bash', f"{'chmod +x ./pdfsizeopt.single'}"])
    subprocess.run(['bash', f"{'sh  {} {} {}'.format(compress,entrada,saida)}"])
 
    
