@@ -76,15 +76,15 @@ def ComprimirPDF(arquivoComprimir):
    entrada = "teste.pdf"
    saida = "Arquivo_Compress.pdf"
 
-   os.system("mkdir pdfsizeopt")
-   os.system("cd ./pdfsizeopt")
-   os.system("wget -O pdfsizeopt_libexec_linux.tar.gz https://github.com/pts/pdfsizeopt/releases/download/2017-01-24/pdfsizeopt_libexec_linux-v3.tar.gz")
-   os.system("tar -xvf pdfsizeopt_libexec_linux.tar-v3.gz")
-   os.system("rm -f    pdfsizeopt_libexec_linux.tar-v3.gz")
-   os.system("wget -O pdfsizeopt.single https://raw.githubusercontent.com/pts/pdfsizeopt/master/pdfsizeopt.single")
-   os.system("chmod +x pdfsizeopt.single")
-   os.system("ln -s pdfsizeopt.single pdfsizeopt")
-   os.system("sh  {} {} {}".format(compress,entrada,saida))
+   subprocess.run(["bash","mkdir pdfsizeopt"])
+   subprocess.run(["bash","cd ./pdfsizeopt"])
+   subprocess.run(["bash","wget -O pdfsizeopt_libexec_linux.tar.gz https://github.com/pts/pdfsizeopt/releases/download/2017-01-24/pdfsizeopt_libexec_linux-v3.tar.gz"])
+   subprocess.run(["bash","tar -xvf pdfsizeopt_libexec_linux.tar-v3.gz"])
+   subprocess.run(["bash","rm -f    pdfsizeopt_libexec_linux.tar-v3.gz"])
+   subprocess.run(["bash","wget -O pdfsizeopt.single https://raw.githubusercontent.com/pts/pdfsizeopt/master/pdfsizeopt.single"])
+   subprocess.run(["bash","chmod +x pdfsizeopt.single"])
+   subprocess.run(["bash","ln -s pdfsizeopt.single pdfsizeopt"])
+   subprocess.run(["bash","sh  {} {} {}".format(compress,entrada,saida)])
    
    #with open(saida,"rb") as arquivoFinal:
       #st.download_button(label ="📥 Download",data = arquivoFinal,file_name=saida)
