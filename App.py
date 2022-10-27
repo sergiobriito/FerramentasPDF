@@ -1,5 +1,5 @@
 import os
-import subprocess
+import time
 import zipfile
 import pikepdf
 import tabula
@@ -78,6 +78,7 @@ def ComprimirPDF(arquivoComprimir):
 
    os.system("tar -xzvf pdfsizeopt_libexec_linux.tar.gz")
    os.system("chmod +x pdfsizeopt.single")
+   time.sleep(10)
    os.system("sh  {} {} {}".format(compress,entrada,saida))
    
    with open(saida,"rb") as arquivoFinal:
