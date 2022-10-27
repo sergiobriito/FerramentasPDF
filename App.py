@@ -78,7 +78,8 @@ def ComprimirPDF(arquivoComprimir):
    st.info("Em desenvolvimento...")
    
    for i in arquivoComprimir:
-       i.getbuffer()
+      with open(i.name,"wb") as x:
+         x.write(i.getbuffer())
 
    compress = "./pdfsizeopt.single"
    entrada = "./novo.pdf"
@@ -100,7 +101,7 @@ def ComprimirPDF(arquivoComprimir):
    #st.success('Concluído!', icon="✅")
        
    os.remove(entrada)
-   os.remove(saida)
+   #os.remove(saida)
       
 def ConverterPDF_EXCEL(arquivoConverter):
    
