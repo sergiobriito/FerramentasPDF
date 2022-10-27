@@ -73,11 +73,17 @@ def ComprimirPDF(arquivoComprimir):
          x.write(i.getbuffer())
 
    compress = "./pdfsizeopt.single"
-   entrada = "novo.pdf"
-   saida = "ArquivoCompress.pdf"
+   entrada = "./novo.pdf"
+   saida = "./ArquivoCompress.pdf"
 
-   os.system("chmod +x *")
+   os.system("chmod +x ./pdfsizeopt.single")
+   os.system("chmod +x ./pdfsizeopt_libexec/avian")
+   os.system("chmod +x ./pdfsizeopt_libexec/gs")
+   os.system("chmod +x ./pdfsizeopt_libexec/jbig2")
+   os.system("chmod +x ./pdfsizeopt_libexec/png22pnm")
+   os.system("chmod +x ./pdfsizeopt_libexec/pngout")
    os.system("chmod +x ./pdfsizeopt_libexec/python")
+   os.system("chmod +x ./pdfsizeopt_libexec/sam2p")
    os.system("{} {} {}".format(compress,entrada,saida))
    
    #with open(saida,"rb") as arquivoFinal:
