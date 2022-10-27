@@ -34,6 +34,9 @@ def JuntarPDF(arquivosJuntar):
          
    os.remove("Arquivo.pdf")
 
+   for i in arquivosJuntar:
+      os.remove(i.name)
+
    st.success('Concluído!', icon="✅")
 
    
@@ -93,6 +96,7 @@ def ComprimirPDF(arquivoComprimir):
    #st.success('Concluído!', icon="✅")
        
    os.remove(entrada)
+   os.remove(saida)
       
 def ConverterPDF_EXCEL(arquivoConverter):
    
@@ -117,6 +121,9 @@ def ConverterPDF_EXCEL(arquivoConverter):
          st.download_button(label ="📥 Download",data = arquivoFinal,file_name="Planilha.xlsx")
          
       os.remove("Planilha.xlsx")
+
+      for i in arquivoConverter:
+         os.remove(i.name)
 
       st.success('Concluído!', icon="✅")   
       
@@ -147,6 +154,9 @@ def ConverterPDF_WORD(arquivoConverter,pages: Tuple = None):
             st.download_button(label ="📥 Download",data = arquivoFinal,file_name=saida)
                
       os.remove(saida)
+
+      for i in arquivoConverter:
+         os.remove(entrada)
 
       st.success('Concluído!', icon="✅")     
    
