@@ -104,8 +104,12 @@ def ComprimirPDF(arquivoComprimir):
       os.system("chmod +x ./pdfsizeopt_libexec/sam2p")
       os.system("dir")
       os.system("{} {} {}".format(compress,entrada,saida))
+
+      pdfFinal = pikepdf.open(saida)
+      saidaFinal = "./Arquivo_Compress_Final.pdf"
+      pdfFinal.save(saidaFinal)
       
-      with open(saida,"rb") as arquivoFinal:
+      with open(saidaFinal,"rb") as arquivoFinal:
          st.download_button(label ="📥 Download",data = arquivoFinal,file_name=saida)
 
       for i in arquivoComprimir:
@@ -113,6 +117,7 @@ def ComprimirPDF(arquivoComprimir):
 
       os.remove(entrada)
       os.remove(saida)
+      os.remove(saidaFinal)
 
       st.success('Concluído!', icon="✅")
 
