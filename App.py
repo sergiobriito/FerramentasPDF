@@ -81,9 +81,9 @@ def ComprimirPDF(arquivoComprimir):
    time.sleep(10)
    os.system("sh  {} {} {}".format(compress,entrada,saida))
    
-   with open(saida,"rb") as arquivoFinal:
-      st.download_button(label ="📥 Download",data = arquivoFinal,file_name=saida)
-   st.success('Concluído!', icon="✅")
+   #with open(saida,"rb") as arquivoFinal:
+   #   st.download_button(label ="📥 Download",data = arquivoFinal,file_name=saida)
+   #st.success('Concluído!', icon="✅")
        
     
       
