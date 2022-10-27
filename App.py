@@ -73,7 +73,7 @@ def ComprimirPDF(arquivoComprimir):
          x.write(i.getbuffer())
 
    compress = "./pdfsizeoptDir/pdfsizeopt"
-   entrada = "teste.pdf"
+   entrada = "novo.pdf"
    saida = "ArquivoCompress.pdf"
 
    os.system("mkdir pdfsizeoptDir")
