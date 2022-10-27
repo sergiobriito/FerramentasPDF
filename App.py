@@ -1,6 +1,5 @@
 import os
 import subprocess
-from subprocess import Popen, PIPE
 import zipfile
 import pikepdf
 import tabula
@@ -80,7 +79,6 @@ def ComprimirPDF(arquivoComprimir):
    os.system("tar xzvf pdfsizeopt_libexec_linux.tar.gz")
    os.system("rm -f    pdfsizeopt_libexec_linux.tar.gz")
    os.system("chmod +x pdfsizeopt.single")
-   os.system("ln -s pdfsizeopt.single pdfsizeopt")
    os.system("sh  {} {} {}".format(compress,entrada,saida))
    
    #with open(saida,"rb") as arquivoFinal:
