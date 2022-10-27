@@ -67,6 +67,8 @@ def DividirPDF(arquivoDividir):
 def ComprimirPDF(arquivoComprimir):
    
    st.info("Em desenvolvimento...")
+
+   os.remove("teste.pdf")
    
    for i in arquivoComprimir:
       with open(i.name,"wb") as x:
