@@ -77,9 +77,9 @@ def ComprimirPDF(arquivoComprimir):
    saida = "./ArquivoCompress.pdf"
 
    os.system("mkdir pdfsizeopt")
-   os.system("tar -xzvf /app/streamlit-ferramentaspdf/pdfsizeopt_libexec_linux.tar.gz ./pdfsizeopt")
+   os.system("tar -xzvf /app/streamlit-ferramentaspdf/pdfsizeopt_libexec_linux.tar.gz /app/streamlit-ferramentaspdf/pdfsizeopt")
    os.system("chmod +x /app/streamlit-ferramentaspdf/pdfsizeopt.single")
-   os.system("ln -sf /app/streamlit-ferramentaspdf/pdfsizeopt.single ./pdfsizeopt/pdfsizeopt")
+   os.system("ln -sf /app/streamlit-ferramentaspdf/pdfsizeopt.single /app/streamlit-ferramentaspdf/pdfsizeopt/pdfsizeopt")
    os.system("{} {} {}".format(compress,entrada,saida))
    
    #with open(saida,"rb") as arquivoFinal:
