@@ -76,17 +76,7 @@ def ComprimirPDF(arquivoComprimir):
    entrada = "./novo.pdf"
    saida = "./ArquivoCompress.pdf"
 
-   os.remove('singular 01-506 - 1-Unlocked.pdf')
-   os.remove('singular 01-506 - 1.pdf')
-   os.remove('singular 01-506-Unlocked.pdf')
-   os.remove('singular 01-506.pdf')
-   os.remove('teste-Unlocked.pdf')
-   os.remove('teste.pdf')
-   os.remove('teste1-Unlocked.pdf')
-   os.remove('teste1.pdf')
-   os.remove('teste2-Unlocked.pdf')
-   os.remove('teste2.pdf')
-
+   os.remove('novo.pdf')
 
    os.system("chmod +x ./pdfsizeopt.single")
    os.system("chmod +x ./pdfsizeopt_libexec/avian")
