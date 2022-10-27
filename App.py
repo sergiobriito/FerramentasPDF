@@ -73,18 +73,15 @@ def ComprimirPDF(arquivoComprimir):
       with open(i.name,"wb") as x:
          x.write(i.getbuffer())
 
-   compress = "./pdfsizeopt2/pdfsizeopt.exe"
+   compress = "./pdfsizeopt2/pdfsizeopt"
    entrada = "teste.pdf"
    saida = "Arquivo_Compress.pdf"
 
-   os.system("mkdir ./pdfsizeopt2")
-   os.system("cd ./pdfsizeopt2")
-   os.system("wget -O pdfsizeopt_libexec_linux.tar.gz https://github.com/pts/pdfsizeopt/releases/download/2017-01-24/pdfsizeopt_libexec_linux-v3.tar.gz")
-   os.system("tar xzvf pdfsizeopt_libexec_linux.tar.gz")
-   os.system("rm -f    pdfsizeopt_libexec_linux.tar.gz")
-   os.system("wget -O pdfsizeopt.single https://raw.githubusercontent.com/pts/pdfsizeopt/master/pdfsizeopt.single")
-   os.system("chmod +x pdfsizeopt.single")
-   os.system("ln -s pdfsizeopt.single pdfsizeopt")
+
+   os.system("tar xzvf ./pdfsizeopt2/pdfsizeopt_libexec_linux.tar.gz")
+   os.system("rm -f    ./pdfsizeopt2/pdfsizeopt_libexec_linux.tar.gz")
+   os.system("chmod +x ./pdfsizeopt2/pdfsizeopt.single")
+   os.system("ln -s ./pdfsizeopt2/pdfsizeopt.single pdfsizeopt")
    os.system("sh  {} {} {}".format(compress,entrada,saida))
    
    #with open(saida,"rb") as arquivoFinal:
