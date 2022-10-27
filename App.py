@@ -14,110 +14,118 @@ import streamlit as st
 
 #----Funcionalidades---
 def JuntarPDF(arquivosJuntar):
-   
-   pdf_editor = PdfFileMerger()
-   
-   for i in arquivosJuntar:
-      with open(i.name,"wb") as x:
-         x.write(i.getbuffer())
 
-      pdf = pikepdf.open(i.name)
-      name = i.name.replace(".pdf","") + "-Unlocked.pdf"
-      pdf.save(name)
-      pdf_editor.append(name)
+   try: 
+      pdf_editor = PdfFileMerger()
+      
+      for i in arquivosJuntar:
+         with open(i.name,"wb") as x:
+            x.write(i.getbuffer())
 
-   pdf_editor.write("Arquivo.pdf")
-   pdf_editor.close()
-   
-   with open("Arquivo.pdf","rb") as arquivoFinal:
-      st.download_button(label="📥 Download",data=arquivoFinal,file_name="Arquivo.pdf")
-         
+         pdf = pikepdf.open(i.name)
+         name = i.name.replace(".pdf","") + "-Unlocked.pdf"
+         pdf.save(name)
+         pdf_editor.append(name)
 
-   for i in arquivosJuntar:
-      os.remove(i.name)
-      os.remove(i.name.replace(".pdf","") + "-Unlocked.pdf")
+      pdf_editor.write("Arquivo.pdf")
+      pdf_editor.close()
+      
+      with open("Arquivo.pdf","rb") as arquivoFinal:
+         st.download_button(label="📥 Download",data=arquivoFinal,file_name="Arquivo.pdf")
+            
 
-   os.remove("Arquivo.pdf")
+      for i in arquivosJuntar:
+         os.remove(i.name)
+         os.remove(i.name.replace(".pdf","") + "-Unlocked.pdf")
 
-   st.success('Concluído!', icon="✅")
+      os.remove("Arquivo.pdf")
 
-   
+      st.success('Concluído!', icon="✅")
+
+   except:
+      st.info("Não foi possível juntar!")
    
 
 def DividirPDF(arquivoDividir):
-   pdf_conteudo = PdfFileReader(arquivoDividir, "rb")
-   totalPaginas = pdf_conteudo.getNumPages()
-   arquivoZIP = zipfile.ZipFile("Arquivos.zip", "w")
-       
-   for pagina in range(totalPaginas):
-      pdf_editor = PdfFileWriter()
-      pdf_editor.addPage(pdf_conteudo.getPage(pagina))
-      nomePaginaPDF = "Página"+str(pagina+1)+".pdf"
 
-      with open(nomePaginaPDF, "wb") as x:
-            pdf_editor.write(x)
-            
-      arquivoZIP.write(nomePaginaPDF, nomePaginaPDF)
+   try: 
+      pdf_conteudo = PdfFileReader(arquivoDividir, "rb")
+      totalPaginas = pdf_conteudo.getNumPages()
+      arquivoZIP = zipfile.ZipFile("Arquivos.zip", "w")
+         
+      for pagina in range(totalPaginas):
+         pdf_editor = PdfFileWriter()
+         pdf_editor.addPage(pdf_conteudo.getPage(pagina))
+         nomePaginaPDF = "Página"+str(pagina+1)+".pdf"
 
-   arquivoZIP.close()
-   with open("Arquivos.zip","rb") as arquivoFinal:
-      st.download_button(label ="📥 Download",data = arquivoFinal,file_name="Arquivos.zip",mime="application/zip")
+         with open(nomePaginaPDF, "wb") as x:
+               pdf_editor.write(x)
+               
+         arquivoZIP.write(nomePaginaPDF, nomePaginaPDF)
 
-   for pagina in range(totalPaginas):
-      nomePaginaPDF = "Página"+str(pagina+1)+".pdf"
-      os.remove(nomePaginaPDF)
+      arquivoZIP.close()
+      with open("Arquivos.zip","rb") as arquivoFinal:
+         st.download_button(label ="📥 Download",data = arquivoFinal,file_name="Arquivos.zip",mime="application/zip")
 
-   os.remove("Arquivos.zip")
+      for pagina in range(totalPaginas):
+         nomePaginaPDF = "Página"+str(pagina+1)+".pdf"
+         os.remove(nomePaginaPDF)
 
-   st.success('Concluído!', icon="✅")
+      os.remove("Arquivos.zip")
 
+      st.success('Concluído!', icon="✅")
+
+   except:
+      st.info("Não foi possível dividir!")
    
 
 def ComprimirPDF(arquivoComprimir):
-
-   os.remove("302 15-Unlocked.pdf")
-
    
-   for i in arquivoComprimir:
-      with open(i.name,"wb") as x:
-         x.write(i.getbuffer())
+   try:
+      for i in arquivoComprimir:
+         with open(i.name,"wb") as x:
+            x.write(i.getbuffer())
 
-   pdf = pikepdf.open(arquivoComprimir[0].name)
-   name = (arquivoComprimir[0].name.replace(".pdf","") + "-Unlocked.pdf").replace(" ","-")
-   pdf.save(name)
+      pdf = pikepdf.open(arquivoComprimir[0].name)
+      name = (arquivoComprimir[0].name.replace(".pdf","") + "-Unlocked.pdf").replace(" ","-")
+      pdf.save(name)
 
-   entrada = "./" + name
-   saida = "./Arquivo_Compress.pdf"
-   compress = "./pdfsizeopt.single"
-   
-   os.system("chmod +x ./pdfsizeopt.single")
-   os.system("chmod +x ./pdfsizeopt_libexec/avian")
-   os.system("chmod +x ./pdfsizeopt_libexec/gs")
-   os.system("chmod +x ./pdfsizeopt_libexec/jbig2")
-   os.system("chmod +x ./pdfsizeopt_libexec/png22pnm")
-   os.system("chmod +x ./pdfsizeopt_libexec/pngout")
-   os.system("chmod +x ./pdfsizeopt_libexec/python")
-   os.system("chmod +x ./pdfsizeopt_libexec/sam2p")
-   os.system("dir")
-   os.system("{} {} {}".format(compress,entrada,saida))
-   
-   with open(saida,"rb") as arquivoFinal:
-      st.download_button(label ="📥 Download",data = arquivoFinal,file_name=saida)
+      entrada = "./" + name
+      saida = "./Arquivo_Compress.pdf"
+      compress = "./pdfsizeopt.single"
+      
+      os.system("chmod +x ./pdfsizeopt.single")
+      os.system("chmod +x ./pdfsizeopt_libexec/avian")
+      os.system("chmod +x ./pdfsizeopt_libexec/gs")
+      os.system("chmod +x ./pdfsizeopt_libexec/jbig2")
+      os.system("chmod +x ./pdfsizeopt_libexec/png22pnm")
+      os.system("chmod +x ./pdfsizeopt_libexec/pngout")
+      os.system("chmod +x ./pdfsizeopt_libexec/python")
+      os.system("chmod +x ./pdfsizeopt_libexec/sam2p")
+      os.system("dir")
+      os.system("{} {} {}".format(compress,entrada,saida))
+      
+      with open(saida,"rb") as arquivoFinal:
+         st.download_button(label ="📥 Download",data = arquivoFinal,file_name=saida)
 
-   for i in arquivoComprimir:
-      os.remove(i.name)
+      for i in arquivoComprimir:
+         os.remove(i.name)
 
-   os.remove(entrada)
-   os.remove(saida)
+      os.remove(entrada)
+      os.remove(saida)
 
-   st.success('Concluído!', icon="✅")
+      st.success('Concluído!', icon="✅")
+
+   except:
+      st.info("Não foi possível comprimir!")
       
 def ConverterPDF_EXCEL(arquivoConverter):
    
-   for i in arquivoConverter:
+   try:     
+      for i in arquivoConverter:
          with open(i.name,"wb") as x:
             x.write(i.getbuffer())
-   try:         
+
       dados = tabula.io.read_pdf(arquivoConverter[0].name, pages='all')[0]
       tabula.convert_into(arquivoConverter[0].name, "Planilha.csv", output_format="csv", pages='all',java_options="-Dfile.encoding=UTF8")
    
@@ -146,13 +154,13 @@ def ConverterPDF_EXCEL(arquivoConverter):
       st.info("Não foi possível converter!")
 
 
-def ConverterPDF_WORD(arquivoConverter,pages: Tuple = None):
+def ConverterPDF_WORD(arquivoConverter,pages: Tuple = None): 
 
-   for i in arquivoConverter:
+   try: 
+      for i in arquivoConverter:
          with open(i.name,"wb") as x:
             x.write(i.getbuffer())
 
-   try: 
       entrada = arquivoConverter[0].name
       saida = str(arquivoConverter[0].name).replace(".pdf","") + ".docx"
 
