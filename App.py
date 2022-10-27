@@ -72,7 +72,7 @@ def ComprimirPDF(arquivoComprimir):
       with open(i.name,"wb") as x:
          x.write(i.getbuffer())
 
-   compress = "pdfsizeopt.single"
+   compress = "./pdfsizeoptDir/pdfsizeopt"
    entrada = "novo.pdf"
    saida = "ArquivoCompress.pdf"
 
@@ -80,7 +80,7 @@ def ComprimirPDF(arquivoComprimir):
    os.system("tar -xvzf /app/streamlit-ferramentaspdf/pdfsizeopt_libexec_linux.tar.gz -C ./pdfsizeoptDir")
    os.system("chmod +x /app/streamlit-ferramentaspdf/pdfsizeopt.single")
    os.system("ln -sf /app/streamlit-ferramentaspdf/pdfsizeopt.single ./pdfsizeoptDir/pdfsizeopt")
-   os.system("{} --use-pngout=no --do-optimize-fonts=no {} {}".format(compress,entrada,saida))
+   os.system("{} {} {}".format(compress,entrada,saida))
    
    #with open(saida,"rb") as arquivoFinal:
    #   st.download_button(label ="📥 Download",data = arquivoFinal,file_name=saida)
