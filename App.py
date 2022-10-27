@@ -85,9 +85,8 @@ def ComprimirPDF(arquivoComprimir):
    name = arquivoComprimir[0].name.replace(".pdf","") + "-Unlocked.pdf"
    pdf.save(name)
 
-   entrada = "./" + name
+   entrada = ("./" + name).replace(" ","-")
    saida = "./Arquivo_Compress.pdf"
-
    compress = "./pdfsizeopt.single"
    
    os.system("chmod +x ./pdfsizeopt.single")
