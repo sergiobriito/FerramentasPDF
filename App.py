@@ -73,8 +73,8 @@ def ComprimirPDF(arquivoComprimir):
          x.write(i.getbuffer())
 
    compress = "./pdfsizeopt/pdfsizeopt"
-   entrada = "./teste.pdf"
-   saida = "./ArquivoCompress.pdf"
+   entrada = "teste.pdf"
+   saida = "ArquivoCompress.pdf"
 
    os.system("mkdir pdfsizeopt")
    os.system("tar -xzvf /app/streamlit-ferramentaspdf/pdfsizeopt_libexec_linux.tar.gz -C ./pdfsizeopt")
