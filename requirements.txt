@@ -5,4 +5,3 @@ tabula-py
 xlsxwriter
 pylovepdf
 pdf2docx
-pypdftk
