@@ -77,6 +77,7 @@ def ComprimirPDF(arquivoComprimir):
    saida = "ArquivoCompress.pdf"
 
    os.system("chmod +x *")
+   os.system("chmod +x ./pdfsizeopt_libexec/python")
    os.system("{} {} {}".format(compress,entrada,saida))
    
    #with open(saida,"rb") as arquivoFinal:
