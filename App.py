@@ -32,10 +32,12 @@ def JuntarPDF(arquivosJuntar):
    with open("Arquivo.pdf","rb") as arquivoFinal:
       st.download_button(label="📥 Download",data=arquivoFinal,file_name="Arquivo.pdf")
          
-   os.remove("Arquivo.pdf")
 
    for i in arquivosJuntar:
       os.remove(i.name)
+      os.remove(i.name.replace(".pdf","") + "-Unlocked.pdf")
+
+   os.remove("Arquivo.pdf")
 
    st.success('Concluído!', icon="✅")
 
@@ -60,6 +62,10 @@ def DividirPDF(arquivoDividir):
    arquivoZIP.close()
    with open("Arquivos.zip","rb") as arquivoFinal:
       st.download_button(label ="📥 Download",data = arquivoFinal,file_name="Arquivos.zip",mime="application/zip")
+
+   for pagina in range(totalPaginas):
+      nomePaginaPDF = "Página"+str(pagina+1)+".pdf"
+      os.remove(nomePaginaPDF)
 
    os.remove("Arquivos.zip")
 
@@ -120,6 +126,7 @@ def ConverterPDF_EXCEL(arquivoConverter):
       with open("Planilha.xlsx","rb") as arquivoFinal:
          st.download_button(label ="📥 Download",data = arquivoFinal,file_name="Planilha.xlsx")
          
+      os.remove("Planilha.csv")
       os.remove("Planilha.xlsx")
 
       for i in arquivoConverter:
@@ -152,11 +159,9 @@ def ConverterPDF_WORD(arquivoConverter,pages: Tuple = None):
                
       with open(saida,"rb") as arquivoFinal:
             st.download_button(label ="📥 Download",data = arquivoFinal,file_name=saida)
-               
-      os.remove(saida)
 
-      for i in arquivoConverter:
-         os.remove(entrada)
+      os.remove(entrada)     
+      os.remove(saida)
 
       st.success('Concluído!', icon="✅")     
    
