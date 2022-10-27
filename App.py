@@ -72,15 +72,14 @@ def ComprimirPDF(arquivoComprimir):
       with open(i.name,"wb") as x:
          x.write(i.getbuffer())
 
-   compress = "./pdfsizeopt"
+   compress = "pdfsizeopt"
    entrada = "teste.pdf"
    saida = "Arquivo_Compress.pdf"
 
-   subprocess.run([f"{'tar xzvf ./pdfsizeopt_libexec_linux.tar.gz'}"])
-   subprocess.run([f"{'rm -f    ./pdfsizeopt_libexec_linux.tar.gz'}"])
-   subprocess.run([f"{'chmod +x ./pdfsizeopt.single'}"])
-   subprocess.run([f"{'sh  {} {} {}'.format(compress,entrada,saida)}"])
-
+   os.system("tar xzvf pdfsizeopt_libexec_linux.tar.gz")
+   os.system("rm -f    pdfsizeopt_libexec_linux.tar.gz")
+   os.system("chmod +x pdfsizeopt.single")
+   os.system("sh  {} {} {}".format(compress,entrada,saida))
    
    #with open(saida,"rb") as arquivoFinal:
       #st.download_button(label ="📥 Download",data = arquivoFinal,file_name=saida)
