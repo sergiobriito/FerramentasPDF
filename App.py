@@ -82,10 +82,10 @@ def ComprimirPDF(arquivoComprimir):
          x.write(i.getbuffer())
 
    pdf = pikepdf.open(arquivoComprimir[0].name)
-   name = arquivoComprimir[0].name.replace(".pdf","") + "-Unlocked.pdf"
+   name = (arquivoComprimir[0].name.replace(".pdf","") + "-Unlocked.pdf").replace(" ","-")
    pdf.save(name)
 
-   entrada = ("./" + name).replace(" ","-")
+   entrada = "./" + name
    saida = "./Arquivo_Compress.pdf"
    compress = "./pdfsizeopt.single"
    
