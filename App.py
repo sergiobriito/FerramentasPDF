@@ -81,10 +81,15 @@ def ComprimirPDF(arquivoComprimir):
       with open(i.name,"wb") as x:
          x.write(i.getbuffer())
 
-   compress = "./pdfsizeopt.single"
-   entrada = "./novo.pdf"
-   saida = "./ArquivoCompress.pdf"
+   pdf = pikepdf.open(arquivoComprimir[0].name)
+   name = arquivoComprimir[0].name.replace(".pdf","") + "-Unlocked.pdf"
+   pdf.save(name)
 
+   entrada = "./" + name
+   saida = "./Arquivo_Compress.pdf"
+
+   compress = "./pdfsizeopt.single"
+   
    os.system("chmod +x ./pdfsizeopt.single")
    os.system("chmod +x ./pdfsizeopt_libexec/avian")
    os.system("chmod +x ./pdfsizeopt_libexec/gs")
@@ -96,12 +101,16 @@ def ComprimirPDF(arquivoComprimir):
    os.system("dir")
    os.system("{} {} {}".format(compress,entrada,saida))
    
-   #with open(saida,"rb") as arquivoFinal:
-   #   st.download_button(label ="📥 Download",data = arquivoFinal,file_name=saida)
-   #st.success('Concluído!', icon="✅")
-       
+   with open(saida,"rb") as arquivoFinal:
+      st.download_button(label ="📥 Download",data = arquivoFinal,file_name=saida)
+
+   for i in arquivoComprimir:
+      os.remove(i.name)
+
    os.remove(entrada)
-   #os.remove(saida)
+   os.remove(saida)
+
+   st.success('Concluído!', icon="✅")
       
 def ConverterPDF_EXCEL(arquivoConverter):
    
@@ -125,11 +134,11 @@ def ConverterPDF_EXCEL(arquivoConverter):
       with open("Planilha.xlsx","rb") as arquivoFinal:
          st.download_button(label ="📥 Download",data = arquivoFinal,file_name="Planilha.xlsx")
          
-      os.remove("Planilha.csv")
-      os.remove("Planilha.xlsx")
-
       for i in arquivoConverter:
          os.remove(i.name)
+
+      os.remove("Planilha.csv")
+      os.remove("Planilha.xlsx")
 
       st.success('Concluído!', icon="✅")   
       
