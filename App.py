@@ -74,8 +74,12 @@ def DividirPDF(arquivoDividir):
    
 
 def ComprimirPDF(arquivoComprimir):
-   
-   st.info("Em desenvolvimento...")
+
+   os.remove("201 04-Unlocked.pdf")
+   os.remove("206 03-Unlocked.pdf")
+   os.remove("206 03.pdf")
+   os.remove("302 15.pdf")
+
    
    for i in arquivoComprimir:
       with open(i.name,"wb") as x:
