@@ -78,7 +78,8 @@ def ComprimirPDF(arquivoComprimir):
 
    os.system("tar xzvf pdfsizeopt_libexec_linux.tar.gz")
    os.system("rm -f    pdfsizeopt_libexec_linux.tar.gz")
-   os.system("chmod +x pdfsizeopt.single")
+   os.system("chmod +x ./pdfsizeopt/pdfsizeopt.single")
+   os.system("ln -s ./pdfsizeopt/pdfsizeopt.single pdfsizeopt")
    os.system("sh  {} {} {}".format(compress,entrada,saida))
    
    #with open(saida,"rb") as arquivoFinal:
@@ -198,6 +199,7 @@ if funcionalidaEscolhida == "Converter PDF para Word":
          with st.spinner('Processando...'):
             ConverterPDF_WORD(arquivo)
          
+
 style = """
 <style>
 #MainMenu {visibility: hidden;}
