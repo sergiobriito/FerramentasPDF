@@ -246,31 +246,16 @@ style = """
 <style>
 #MainMenu {visibility: hidden;}
 header {visibility: hidden;}
+footer {visibility: hidden;}
+footer:after {
+visibility: visible;
+content: 'Criado por Sérgio Brito';
+display: block;
+position: relative;
+color: black;}
 .css-12oz5g7 {padding: 2rem 1rem;}
 .css-14xtw13 {visibility: hidden;}
-a:link , a:visited{
-color: white;
-background-color: transparent;
-text-decoration: underline;}
-a:hover,  a:active {
-color: red;
-background-color: transparent;
-text-decoration: underline;}
-footer {
-position: fixed;
-left: 0;
-bottom: 0;
-width: 100%;
-background-color: transparent;
-color: white;
-text-align: center;}
 </style>
-<div class="footer">
-<p>Criado por 
-<a style='display: block; color: black; text-align: center;' href="https://linkedin.com/in/sérgio--brito" target="_blank">Sérgio Brito
-</a>
-</p>
-</div>
 """
 
 st.markdown(style, unsafe_allow_html=True)
