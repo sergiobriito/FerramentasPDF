@@ -255,7 +255,6 @@ position: relative;
 color: black;}
 .css-12oz5g7 {padding: 2rem 1rem;}
 .css-14xtw13 {visibility: hidden;}
-div.viewerBadge_link__1S137 {visibility: hidden;}
 </style>
 """
 
