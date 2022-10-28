@@ -248,6 +248,14 @@ style = """
 header {visibility: hidden;}
 .css-12oz5g7 {padding: 2rem 1rem;}
 .css-14xtw13 {visibility: hidden;}
+a:link , a:visited{
+color: white;
+background-color: transparent;
+text-decoration: underline;}
+a:hover,  a:active {
+color: red;
+background-color: transparent;
+text-decoration: underline;}
 footer {
 position: fixed;
 left: 0;
