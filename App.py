@@ -250,6 +250,7 @@ footer {visibility: hidden;}
 footer:after {
 visibility: visible;
 content: 'Criado por Sérgio Brito';
+href="https://linkedin.com/in/sérgio--brito" target="_blank"
 display: block;
 position: relative;
 color: black;}
