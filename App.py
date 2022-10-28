@@ -250,13 +250,18 @@ footer {visibility: hidden;}
 footer:after {
 visibility: visible;
 content: 'Criado por Sérgio Brito';
-href="https://linkedin.com/in/sérgio--brito" target="_blank"
 display: block;
 position: relative;
 color: black;}
 .css-12oz5g7 {padding: 2rem 1rem;}
 .css-14xtw13 {visibility: hidden;}
 </style>
+<div class="footer">
+<p>Criado por 
+<a style='display: block; color: white; text-align: center;' href="https://linkedin.com/in/sérgio--brito" target="_blank">Sérgio Brito
+</a>
+</p>
+</div>
 """
 
 st.markdown(style, unsafe_allow_html=True)
