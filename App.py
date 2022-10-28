@@ -255,6 +255,7 @@ position: relative;
 color: black;}
 .css-12oz5g7 {padding: 2rem 1rem;}
 .css-14xtw13 {visibility: hidden;}
+a.viewerBadge_container__1QSob {visibility: hidden;}
 </style>
 """
 
