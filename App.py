@@ -301,11 +301,5 @@ section.css-po3vlj.exg6vvm15 button{visibility:hidden;}
 
 st.markdown(style, unsafe_allow_html=True)
 
-my_js = """
-document.getElementsByTagName('head')[0].appendChild( '<meta name="google-site-verification" content="eHqRAZ2787A7RfWNg4MTF_wCFXpt9i92UbQ-gh7BiRQ" />');
-"""
-
-my_html = f"<script type='text/javascript' async>{my_js}</script>"
-
-components.html(my_html)
+components.iframe("googlea69a5919d8fe5d0a.html")
 
