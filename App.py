@@ -297,8 +297,6 @@ section.css-po3vlj.exg6vvm15 button{visibility:hidden;}
 <a id="nome" class="badge-base__link LI-simple-link" href="https://br.linkedin.com/in/s%C3%A9rgio--brito?trk=profile-badge">Sérgio Brito</a>
 </div>
 
-<div id="googleVerification">google-site-verification: googlea69a5919d8fe5d0a.html</div>
-
 """
 
 st.markdown(style, unsafe_allow_html=True)
