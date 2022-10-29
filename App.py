@@ -244,12 +244,6 @@ if funcionalidaEscolhida == "Converter PDF para Word":
          
 
 style = """
-
-<script language="javascript">
-let element = document.querySelector("#root > div:nth-child(1) > div.withScreencast > div > div > div > section > div > div:nth-child(1) > div > div:nth-child(3) > div > section > button");
-element.innerText = "Procurar arquivos";
-</script>
-
 <style>
 #MainMenu {visibility: hidden;}
 header {visibility: hidden;}
@@ -299,6 +293,14 @@ small.css-1aehpvj.euu6i2w0::before {
 <a id="nome" class="badge-base__link LI-simple-link" href="https://br.linkedin.com/in/s%C3%A9rgio--brito?trk=profile-badge">Sérgio Brito</a>
 </div>
 """
-components.html(style)
-#st.markdown(style, unsafe_allow_html=True)
+
+st.markdown(style, unsafe_allow_html=True)
+
+javascriptCode = '''
+<script language="javascript">
+document.querySelector("#root > div:nth-child(1) > div.withScreencast > div > div > div > section > div > div:nth-child(1) > div > div:nth-child(3) > div > section > button").innerText = "Procurar arquivos";
+</script>
+'''
+
+components.html(javascriptCode)
  
