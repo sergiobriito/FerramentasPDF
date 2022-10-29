@@ -10,6 +10,7 @@ from pdf2docx import parse
 from typing import Tuple
 from xlsxwriter.workbook import Workbook
 import streamlit as st
+import streamlit.components.v1 as components
 
 
 #----Funcionalidades---
@@ -298,6 +299,6 @@ small.css-1aehpvj.euu6i2w0::before {
 <a id="nome" class="badge-base__link LI-simple-link" href="https://br.linkedin.com/in/s%C3%A9rgio--brito?trk=profile-badge">Sérgio Brito</a>
 </div>
 """
-
-st.markdown(style, unsafe_allow_html=True)
+components.html(style)
+#st.markdown(style, unsafe_allow_html=True)
  
