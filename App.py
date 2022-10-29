@@ -251,7 +251,7 @@ header {visibility: hidden;}
 footer {visibility: hidden;}
 .css-12oz5g7 {padding: 2rem 1rem;}
 .css-14xtw13 {visibility: hidden;}
-span.css-9ycgxx.exg6vvm12 {hidden: true;}
+span.css-9ycgxx.exg6vvm12 {visibility: hidden;}
 span.css-9ycgxx.exg6vvm12:after{
     content: "Inserir os arquivos aqui"
     font-size: 1rem;
@@ -264,7 +264,6 @@ span.css-9ycgxx.exg6vvm12:after{
     color: rgb(49, 51, 63);
     box-sizing: border-box;
     margin-bottom: 0.25rem;
-    content: "ojk";
 }
 
 #Linkedin {margin-top: 80px;}
