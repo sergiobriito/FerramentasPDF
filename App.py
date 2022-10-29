@@ -253,8 +253,8 @@ footer {visibility: hidden;}
 .css-14xtw13 {visibility: hidden;}
 span.css-9ycgxx.exg6vvm12 {visibility: hidden;}
 span.css-9ycgxx.exg6vvm12::after {
-    visibility: visible
-    content: "Inserir os arquivos aqui"
+    visibility: visible;
+    content: "Inserir os arquivos aqui";
     font-size: 1rem;
     font-family: "Source Sans Pro", sans-serif;
     font-weight: 400;
@@ -266,6 +266,7 @@ span.css-9ycgxx.exg6vvm12::after {
     box-sizing: border-box;
     margin-bottom: 0.25rem;
 }
+
 
 #Linkedin {margin-top: 80px;}
 #desenvolvidoPor {color: black;}
