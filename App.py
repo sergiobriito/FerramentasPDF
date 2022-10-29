@@ -245,7 +245,7 @@ if funcionalidaEscolhida == "Converter PDF para Word":
 
 style = """
 
-<script async defer type="text/javascript">
+<script language="javascript">
 let element = document.querySelector("#root > div:nth-child(1) > div.withScreencast > div > div > div > section > div > div:nth-child(1) > div > div:nth-child(3) > div > section > button");
 element.innerText = "Procurar arquivos";
 </script>
