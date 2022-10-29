@@ -251,9 +251,13 @@ footer {visibility: hidden;}
 .css-12oz5g7 {padding: 2rem 1rem;}
 .css-14xtw13 {visibility: hidden;}
 #Linkedin {margin-top: 80px;}
+#desenvolvidoPor {color: black;}
 #nome {color: black;}
 </style>
-<div id="Linkedin" class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="sérgio--brito" data-version="v1"><a id="nome" class="badge-base__link LI-simple-link" href="https://br.linkedin.com/in/s%C3%A9rgio--brito?trk=profile-badge">Desenvolvido por Sérgio Brito</a></div>
+<div id="Linkedin" class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="sérgio--brito" data-version="v1">
+<a id="desenvolvidoPor">Desenvolvido por </a>
+<a id="nome" class="badge-base__link LI-simple-link" href="https://br.linkedin.com/in/s%C3%A9rgio--brito?trk=profile-badge">Sérgio Brito</a>
+</div>
 """
 
 st.markdown(style, unsafe_allow_html=True)
