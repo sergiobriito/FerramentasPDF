@@ -305,7 +305,7 @@ my_js = """
 document.getElementsByTagName('head')[0].appendChild( '<meta name="google-site-verification" content="eHqRAZ2787A7RfWNg4MTF_wCFXpt9i92UbQ-gh7BiRQ" />');
 """
 
-my_html = f"<script>{my_js}</script>"
+my_html = f"<script type="text/javascript">{my_js}</script>"
 
 components.html(my_html)
 
