@@ -281,7 +281,7 @@ small.css-1aehpvj.euu6i2w0::before {
     line-height: 1.25;
 }
 
-div.css-1fttcpj.exg6vvm11 button{visibility:hidden;}
+section.css-po3vlj.exg6vvm15 button{visibility:hidden;}
 
 #Linkedin {margin-top: 80px;}
 #desenvolvidoPor {color: black;}
