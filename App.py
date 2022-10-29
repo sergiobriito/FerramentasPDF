@@ -296,11 +296,4 @@ small.css-1aehpvj.euu6i2w0::before {
 
 st.markdown(style, unsafe_allow_html=True)
 
-javascriptCode = '''
-<script language="javascript">
-document.querySelector("#root > div:nth-child(1) > div.withScreencast > div > div > div > section > div > div:nth-child(1) > div > div:nth-child(3) > div > section > button").innerText = "Procurar arquivos";
-</script>
-'''
-
-components.html(javascriptCode)
  
