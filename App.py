@@ -243,27 +243,40 @@ if funcionalidaEscolhida == "Converter PDF para Word":
          
 
 style = """
-<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script> 
-<script>
-let element = document.querySelector("#root > div:nth-child(1) > div.withScreencast > div > div > div > section > div > div:nth-child(1) > div > div:nth-child(3) > div > section > div > div > small");
-element.innerHTML = 'Limite de 200MB por arquivo';
-</script>
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
 <style>
 #MainMenu {visibility: hidden;}
 header {visibility: hidden;}
 footer {visibility: hidden;}
 .css-12oz5g7 {padding: 2rem 1rem;}
 .css-14xtw13 {visibility: hidden;}
+span.css-9ycgxx.exg6vvm12 {hidden: true;}
+span.css-9ycgxx.exg6vvm12:after{
+    content: "Inserir os arquivos aqui"
+    font-size: 1rem;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-font-smoothing: auto;
+    color: rgb(49, 51, 63);
+    box-sizing: border-box;
+    margin-bottom: 0.25rem;
+    content: "ojk";
+}
+
 #Linkedin {margin-top: 80px;}
 #desenvolvidoPor {color: black;}
 #nome {color: black;}
 </style>
+
 <div id="Linkedin" class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="sérgio--brito" data-version="v1">
 <a href="https://br.linkedin.com/in/s%C3%A9rgio--brito?trk=profile-badge"><img src="https://brand.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="Linkedin" style="width:42px;height:42px;"></a>
 <a id="desenvolvidoPor">Desenvolvido por </a>
 <a id="nome" class="badge-base__link LI-simple-link" href="https://br.linkedin.com/in/s%C3%A9rgio--brito?trk=profile-badge">Sérgio Brito</a>
 </div>
-
 """
 
 st.markdown(style, unsafe_allow_html=True)
