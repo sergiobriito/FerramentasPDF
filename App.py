@@ -301,7 +301,3 @@ section.css-po3vlj.exg6vvm15 button{visibility:hidden;}
 
 st.markdown(style, unsafe_allow_html=True)
 
-HtmlFile = open("googlea69a5919d8fe5d0a.html", 'r', encoding='utf-8')
-source_code = HtmlFile.read() 
-print(source_code)
-components.html(source_code)
