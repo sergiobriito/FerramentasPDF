@@ -197,7 +197,7 @@ def ConverterPDF_WORD(arquivoConverter,pages: Tuple = None):
 st.set_page_config(page_icon="📄", page_title="Ferramentas para PDF")
 st.title("📄 Ferramentas para PDF")
 
-funcionalidaEscolhida = st.radio("Selecione uma opção:",("Juntar PDF", "Dividir PDF","Comprimir PDF","Converter PDF para Excel","Converter PDF para Word"),horizontal=True)
+funcionalidaEscolhida = st.radio("Selecione uma opção:",("Juntar PDF", "Dividir PDF","Comprimir PDF","Converter PDF para Excel","Converter PDF para Word"))
 
 if funcionalidaEscolhida == "Juntar PDF":
    arquivos = st.file_uploader("Escolha os arquivos:", accept_multiple_files=True)
