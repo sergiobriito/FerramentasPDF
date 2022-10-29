@@ -243,15 +243,14 @@ if funcionalidaEscolhida == "Converter PDF para Word":
          
 
 style = """
-<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-<div class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="sérgio--brito" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://br.linkedin.com/in/s%C3%A9rgio--brito?trk=profile-badge">Sérgio Brito</a></div>       
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>    
 <style>
 #MainMenu {visibility: hidden;}
 header {visibility: hidden;}
 footer {visibility: hidden;}
 footer:after {
 visibility: visible;
-content: 'Criado por Sérgio Brito';
+content: <div class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="sérgio--brito" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://br.linkedin.com/in/s%C3%A9rgio--brito?trk=profile-badge">Sérgio Brito</a></div>;
 display: block;
 position: relative;
 color: black;}
