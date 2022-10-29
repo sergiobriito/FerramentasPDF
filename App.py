@@ -266,6 +266,20 @@ span.css-9ycgxx.exg6vvm12::before {
     box-sizing: border-box;
     margin-bottom: 0.25rem;
 }
+small.css-1aehpvj.euu6i2w0 {visibility: hidden;}
+small.css-1aehpvj.euu6i2w0::before {
+    visibility: visible;
+    content: "Limite de 200MB por arquivo";
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
+    text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-font-smoothing: auto;
+    box-sizing: border-box;
+    color: rgba(49, 51, 63, 0.6);
+    font-size: 14px;
+    line-height: 1.25;
+}
 
 #Linkedin {margin-top: 80px;}
 #desenvolvidoPor {color: black;}
