@@ -281,7 +281,7 @@ small.css-1aehpvj.euu6i2w0::before {
     line-height: 1.25;
 }
 
-button.css-6kekos.edgvbvh9[innerText = "Browse files"] {visibility:hidden;}
+button[innerText = "Browse files"] {visibility:hidden;}
 
 #Linkedin {margin-top: 80px;}
 #desenvolvidoPor {color: black;}
