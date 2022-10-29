@@ -250,7 +250,10 @@ header {visibility: hidden;}
 footer {visibility: hidden;}
 .css-12oz5g7 {padding: 2rem 1rem;}
 .css-14xtw13 {visibility: hidden;}
-span.css-9ycgxx.exg6vvm12 {visibility: hidden;}
+span.css-9ycgxx.exg6vvm12 {
+visibility: hidden;
+white-space: nowrap;
+}
 span.css-9ycgxx.exg6vvm12::before {
     visibility: visible;
     content: "Selecionar os arquivos, ou arraste e solte os arquivos aqui";
