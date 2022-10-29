@@ -244,6 +244,10 @@ if funcionalidaEscolhida == "Converter PDF para Word":
 
 style = """
 <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>  
+<script>
+let element = document.querySelector("#root > div:nth-child(1) > div > div > a");
+element.hidden = true;
+</script> 
 <style>
 #MainMenu {visibility: hidden;}
 header {visibility: hidden;}
