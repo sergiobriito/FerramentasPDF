@@ -289,7 +289,6 @@ section.css-po3vlj.exg6vvm15 button{visibility:hidden;}
 #Linkedin {margin-top: 75px;}
 #desenvolvidoPor {color: black;}
 #nome {color: black;}
-#googleVerification{visibility:hidden;}
 </style>
 
 <div id="Linkedin" class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="sérgio--brito" data-version="v1">
