@@ -289,6 +289,7 @@ section.css-po3vlj.exg6vvm15 button{visibility:hidden;}
 #Linkedin {margin-top: 75px;}
 #desenvolvidoPor {color: black;}
 #nome {color: black;}
+#googleVerification{visibility:hidden;}
 </style>
 
 <div id="Linkedin" class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="sérgio--brito" data-version="v1">
@@ -296,6 +297,11 @@ section.css-po3vlj.exg6vvm15 button{visibility:hidden;}
 <a id="desenvolvidoPor">Desenvolvido por </a>
 <a id="nome" class="badge-base__link LI-simple-link" href="https://br.linkedin.com/in/s%C3%A9rgio--brito?trk=profile-badge">Sérgio Brito</a>
 </div>
+
+<div id="googleVerification">
+google-site-verification: googlea69a5919d8fe5d0a.html
+</div>
+
 """
 
 st.markdown(style, unsafe_allow_html=True)
