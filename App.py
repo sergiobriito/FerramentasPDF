@@ -253,7 +253,7 @@ footer {visibility: hidden;}
 span.css-9ycgxx.exg6vvm12 {visibility: hidden;}
 span.css-9ycgxx.exg6vvm12::before {
     visibility: visible;
-    content: "Inserir os arquivos aqui";
+    content: "Selecionar os arquivos, ou arraste e solte os arquivos aqui";
     font-size: 1rem;
     font-family: "Source Sans Pro", sans-serif;
     font-weight: 400;
