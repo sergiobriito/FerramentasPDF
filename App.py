@@ -104,7 +104,7 @@ def ComprimirPDF(arquivoComprimir):
       os.system("chmod +x ./pdfsizeopt_libexec/python")
       os.system("chmod +x ./pdfsizeopt_libexec/sam2p")
       os.system("dir")
-      os.system("{} --use-pngout=yes {} {}".format(compress,entrada,saida))
+      os.system("{} --use-image-optimizer=sam2,jbig2,pngout,zopflipng,optipng,advpng,ECT  {} {}".format(compress,entrada,saida))
 
       pdfFinal = pikepdf.open(saida)
       saidaFinal = "./Arquivo_Compress_Final.pdf"
