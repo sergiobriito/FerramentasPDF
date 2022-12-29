@@ -93,7 +93,8 @@ def ComprimirPDF(arquivoComprimir):
 
       entrada = "./" + name
       saida = "./Arquivo_Compress.pdf"
-      compress = "./pdfsizeopt.single"
+      #compress = "./pdfsizeopt.single"
+      compress = "./pdfsizeopt_libexec/gs"
       
       os.system("chmod +x ./pdfsizeopt.single")
       os.system("chmod +x ./pdfsizeopt_libexec/avian")
@@ -104,7 +105,8 @@ def ComprimirPDF(arquivoComprimir):
       os.system("chmod +x ./pdfsizeopt_libexec/python")
       os.system("chmod +x ./pdfsizeopt_libexec/sam2p")
       os.system("dir")
-      os.system("{} --use-image-optimizer=sam2,jbig2,pngout,zopflipng,optipng,advpng,ECT  {} {}".format(compress,entrada,saida))
+      os.system("{} -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dCompatibilityLevel=1.3 -dPDFSETTINGS=/screen -dEmbedAllFonts=true -dSubsetFonts=true -dColorImageDownsampleType=/Bicubic -dColorImageResolution=144 -dGrayImageDownsampleType=/Bicubic -dGrayImageResolution=144 -dMonoImageDownsampleType=/Bicubic -dMonoImageResolution=144 -sOutputFile={} {}".format(compress,saida,entrada))
+      #os.system("{} --use-image-optimizer=sam2,jbig2,pngout,zopflipng,optipng,advpng,ECT  {} {}".format(compress,entrada,saida))
 
       pdfFinal = pikepdf.open(saida)
       saidaFinal = "./Arquivo_Compress_Final.pdf"
