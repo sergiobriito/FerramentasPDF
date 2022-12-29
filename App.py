@@ -288,7 +288,7 @@ small.css-1aehpvj.euu6i2w0::before {
 
 section.css-po3vlj.exg6vvm15 button{visibility:hidden;}
 
-#Linkedin {margin-top: 75px;}
+#Linkedin {margin-top: 175px;}
 #desenvolvidoPor {color: black;}
 #nome {color: black;}
 </style>
