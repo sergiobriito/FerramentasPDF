@@ -16,35 +16,35 @@ import streamlit.components.v1 as components
 #----Funcionalidades---
 def JuntarPDF(arquivosJuntar):
 
-   try: 
-      pdf_editor = PdfFileMerger()
-      
-      for i in arquivosJuntar:
-         with open(i.name,"wb") as x:
-            x.write(i.getbuffer())
+   #try: 
+   pdf_editor = PdfFileMerger()
 
-         pdf = pikepdf.open(i.name)
-         name = i.name.replace(".pdf","") + "-Unlocked.pdf"
-         pdf.save(name)
-         pdf_editor.append(name)
+   for i in arquivosJuntar:
+      with open(i.name,"wb") as x:
+         x.write(i.getbuffer())
 
-      pdf_editor.write("Arquivo.pdf")
-      pdf_editor.close()
-      
-      with open("Arquivo.pdf","rb") as arquivoFinal:
-         st.download_button(label="📥 Download",data=arquivoFinal,file_name="Arquivo.pdf")
-            
+      pdf = pikepdf.open(i.name)
+      name = i.name.replace(".pdf","") + "-Unlocked.pdf"
+      pdf.save(name)
+      pdf_editor.append(name)
 
-      for i in arquivosJuntar:
-         os.remove(i.name)
-         os.remove(i.name.replace(".pdf","") + "-Unlocked.pdf")
+   pdf_editor.write("Arquivo.pdf")
+   pdf_editor.close()
 
-      os.remove("Arquivo.pdf")
+   with open("Arquivo.pdf","rb") as arquivoFinal:
+      st.download_button(label="📥 Download",data=arquivoFinal,file_name="Arquivo.pdf")
 
-      st.success('Concluído!', icon="✅")
 
-   except:
-      st.info("Não foi possível juntar!")
+   for i in arquivosJuntar:
+      os.remove(i.name)
+      os.remove(i.name.replace(".pdf","") + "-Unlocked.pdf")
+
+   os.remove("Arquivo.pdf")
+
+   st.success('Concluído!', icon="✅")
+
+   #except:
+   #  st.info("Não foi possível juntar!")
    
 
 def DividirPDF(arquivoDividir):
