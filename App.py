@@ -51,7 +51,7 @@ def DividirPDF(arquivoDividir):
 
    #try: 
    pdf_conteudo = PdfReader(arquivoDividir, "rb")
-   totalPaginas = pdf_conteudo.getNumPages()
+   totalPaginas = len(pdf_conteudo.pages)
    arquivoZIP = zipfile.ZipFile("Arquivos.zip", "w")
 
    for pagina in range(totalPaginas):
