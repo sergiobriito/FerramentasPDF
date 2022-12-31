@@ -49,35 +49,35 @@ def JuntarPDF(arquivosJuntar):
 
 def DividirPDF(arquivoDividir):
 
-   try: 
-      pdf_conteudo = PdfReader(arquivoDividir, "rb")
-      totalPaginas = pdf_conteudo.getNumPages()
-      arquivoZIP = zipfile.ZipFile("Arquivos.zip", "w")
-         
-      for pagina in range(totalPaginas):
-         pdf_editor = PdfWriter()
-         pdf_editor.addPage(pdf_conteudo.getPage(pagina))
-         nomePaginaPDF = "Página"+str(pagina+1)+".pdf"
+   #try: 
+   pdf_conteudo = PdfReader(arquivoDividir, "rb")
+   totalPaginas = pdf_conteudo.getNumPages()
+   arquivoZIP = zipfile.ZipFile("Arquivos.zip", "w")
 
-         with open(nomePaginaPDF, "wb") as x:
-               pdf_editor.write(x)
-               
-         arquivoZIP.write(nomePaginaPDF, nomePaginaPDF)
+   for pagina in range(totalPaginas):
+      pdf_editor = PdfWriter()
+      pdf_editor.addPage(pdf_conteudo.getPage(pagina))
+      nomePaginaPDF = "Página"+str(pagina+1)+".pdf"
 
-      arquivoZIP.close()
-      with open("Arquivos.zip","rb") as arquivoFinal:
-         st.download_button(label ="📥 Download",data = arquivoFinal,file_name="Arquivos.zip",mime="application/zip")
+      with open(nomePaginaPDF, "wb") as x:
+            pdf_editor.write(x)
 
-      for pagina in range(totalPaginas):
-         nomePaginaPDF = "Página"+str(pagina+1)+".pdf"
-         os.remove(nomePaginaPDF)
+      arquivoZIP.write(nomePaginaPDF, nomePaginaPDF)
 
-      os.remove("Arquivos.zip")
+   arquivoZIP.close()
+   with open("Arquivos.zip","rb") as arquivoFinal:
+      st.download_button(label ="📥 Download",data = arquivoFinal,file_name="Arquivos.zip",mime="application/zip")
 
-      st.success('Concluído!', icon="✅")
+   for pagina in range(totalPaginas):
+      nomePaginaPDF = "Página"+str(pagina+1)+".pdf"
+      os.remove(nomePaginaPDF)
 
-   except:
-      st.info("Não foi possível dividir!")
+   os.remove("Arquivos.zip")
+
+   st.success('Concluído!', icon="✅")
+
+   #except:
+   #   st.info("Não foi possível dividir!")
    
 
 def ComprimirPDF(arquivoComprimir):
