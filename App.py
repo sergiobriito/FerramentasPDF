@@ -3,7 +3,7 @@ import time
 import zipfile
 import pikepdf
 import tabula
-from PyPDF2 import PdfFileReader, PdfFileMerger, PdfFileWriter
+from PyPDF2 import PdfFileReader, PdfMerger, PdfFileWriter
 import glob
 import csv
 from pdf2docx import parse
@@ -17,7 +17,7 @@ import streamlit.components.v1 as components
 def JuntarPDF(arquivosJuntar):
 
    #try: 
-   pdf_editor = PdfFileMerger()
+   pdf_editor = PdfMerger()
 
    for i in arquivosJuntar:
       with open(i.name,"wb") as x:
