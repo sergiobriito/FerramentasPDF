@@ -3,7 +3,7 @@ import time
 import zipfile
 import pikepdf
 import tabula
-from PyPDF2 import PdfFileReader, PdfMerger, PdfFileWriter
+from PyPDF2 import PdfReader, PdfMerger, PdfWriter
 import glob
 import csv
 from pdf2docx import parse
@@ -16,46 +16,46 @@ import streamlit.components.v1 as components
 #----Funcionalidades---
 def JuntarPDF(arquivosJuntar):
 
-   #try: 
-   pdf_editor = PdfMerger()
+   try: 
+      pdf_editor = PdfMerger()
 
-   for i in arquivosJuntar:
-      with open(i.name,"wb") as x:
-         x.write(i.getbuffer())
+      for i in arquivosJuntar:
+         with open(i.name,"wb") as x:
+            x.write(i.getbuffer())
 
-      pdf = pikepdf.open(i.name)
-      name = i.name.replace(".pdf","") + "-Unlocked.pdf"
-      pdf.save(name)
-      pdf_editor.append(name)
+         pdf = pikepdf.open(i.name)
+         name = i.name.replace(".pdf","") + "-Unlocked.pdf"
+         pdf.save(name)
+         pdf_editor.append(name)
 
-   pdf_editor.write("Arquivo.pdf")
-   pdf_editor.close()
+      pdf_editor.write("Arquivo.pdf")
+      pdf_editor.close()
 
-   with open("Arquivo.pdf","rb") as arquivoFinal:
-      st.download_button(label="📥 Download",data=arquivoFinal,file_name="Arquivo.pdf")
+      with open("Arquivo.pdf","rb") as arquivoFinal:
+         st.download_button(label="📥 Download",data=arquivoFinal,file_name="Arquivo.pdf")
 
 
-   for i in arquivosJuntar:
-      os.remove(i.name)
-      os.remove(i.name.replace(".pdf","") + "-Unlocked.pdf")
+      for i in arquivosJuntar:
+         os.remove(i.name)
+         os.remove(i.name.replace(".pdf","") + "-Unlocked.pdf")
 
-   os.remove("Arquivo.pdf")
+      os.remove("Arquivo.pdf")
 
-   st.success('Concluído!', icon="✅")
+      st.success('Concluído!', icon="✅")
 
-   #except:
-   #  st.info("Não foi possível juntar!")
+   except:
+     st.info("Não foi possível juntar!")
    
 
 def DividirPDF(arquivoDividir):
 
    try: 
-      pdf_conteudo = PdfFileReader(arquivoDividir, "rb")
+      pdf_conteudo = PdfReader(arquivoDividir, "rb")
       totalPaginas = pdf_conteudo.getNumPages()
       arquivoZIP = zipfile.ZipFile("Arquivos.zip", "w")
          
       for pagina in range(totalPaginas):
-         pdf_editor = PdfFileWriter()
+         pdf_editor = PdfWriter()
          pdf_editor.addPage(pdf_conteudo.getPage(pagina))
          nomePaginaPDF = "Página"+str(pagina+1)+".pdf"
 
