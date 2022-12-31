@@ -56,7 +56,7 @@ def DividirPDF(arquivoDividir):
 
    for pagina in range(totalPaginas):
       pdf_editor = PdfWriter()
-      pdf_editor.addPage(pdf_conteudo.pages[pagina])
+      pdf_editor.add_page(pdf_conteudo.pages[pagina])
       nomePaginaPDF = "Página"+str(pagina+1)+".pdf"
 
       with open(nomePaginaPDF, "wb") as x:
